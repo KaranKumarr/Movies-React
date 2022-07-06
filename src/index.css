@@ -2,4 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Gentium Book Plus', serif;
+}
+
+body{
+  background-color: #1A171E;
+  color: white;
 }
