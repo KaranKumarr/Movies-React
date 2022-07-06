@@ -11,9 +11,9 @@ function LargeMovieCard({ title, rating, imageUrl, genres, release }) {
     });
 
     let date = new Date(release);
-    let options = { year: 'numeric', month: 'short', day: '2-digit'};
+    let options = { year: 'numeric', month: 'short', day: '2-digit' };
     let _resultDate = new Intl.DateTimeFormat('en-GB', options).format(date);
-    console.log(_resultDate);
+
 
     const cardMotion = {
         hover: {

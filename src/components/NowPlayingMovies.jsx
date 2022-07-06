@@ -47,9 +47,7 @@ export default function NowPlayingMovies() {
                     })
                 }
             </SSplide>
-            {
-                console.log(nowPlayingMovies)
-            }
+        
         </Wrapper>
     );
 }
