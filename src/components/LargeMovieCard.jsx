@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { HiStar } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import { getGenreName } from '../data/moviesApiCall';
@@ -42,7 +43,7 @@ function LargeMovieCard({ title, rating, imageUrl, genres, release }) {
             whileHover="hover"
             animate="rest"
         >
-            <div>
+            <Link to={'/movie/123'}>
                 <img src={`https://image.tmdb.org/t/p/original${imageUrl}`} alt={title} />
                 <h2>{title.toUpperCase()}</h2>
                 <h3>
@@ -56,7 +57,7 @@ function LargeMovieCard({ title, rating, imageUrl, genres, release }) {
 
                 </Summary>
                 <Gradient />
-            </div>
+            </Link>
         </Card>
     );
 }
@@ -66,7 +67,7 @@ const Card = styled(motion.div)`
     min-width: 20rem;
     position: relative;
     cursor: pointer;
-    div{
+    Link{
         width: 100%;
     }
     img{
