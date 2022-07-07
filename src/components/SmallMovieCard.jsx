@@ -3,7 +3,16 @@ import { HiStar } from 'react-icons/hi';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-function SmallMovieCard({ imageUrl, rating, title }) {
+function SmallMovieCard({ imageUrl, rating, title, release }) {
+
+    let _resultDate;
+
+    if (release) {
+        let date = new Date(release);
+        let options = { year: 'numeric', month: 'short', day: '2-digit' };
+        _resultDate = new Intl.DateTimeFormat('en-GB', options).format(date);
+    }
+
 
     const cardMotion = {
         hover: {
@@ -35,12 +44,26 @@ function SmallMovieCard({ imageUrl, rating, title }) {
         >
             <div>
                 <img src={`https://image.tmdb.org/t/p/original${imageUrl}`} alt={title} />
-                <motion.h4
-                    variants={cardMotion}
-                >
-                    <HiStar />
-                    {rating}
-                </motion.h4>
+
+                {
+                    release ? (
+                        <motion.h4
+                            variants={cardMotion}
+                            style={{ opacity: "50%" }}
+                        >
+                            {_resultDate}
+                        </motion.h4>
+
+                    ) : (
+                        <motion.h4
+                            variants={cardMotion}
+                        >
+                            <HiStar />
+                            {rating}
+                        </motion.h4>
+
+                    )
+                }
                 <Gradient
                     initial={{
                         background: "linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.25))",

@@ -24,3 +24,14 @@ export const getTopRatedMovies = () => {
 };
 
 
+export const getPopularMovies = () => {
+
+    return nowPlayingData.results;
+};
+
+
+export const getUpcomingMovies = () => {
+
+    return nowPlayingData.results;
+};
+
