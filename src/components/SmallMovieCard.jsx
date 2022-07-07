@@ -26,10 +26,6 @@ function SmallMovieCard({ imageUrl, rating, title }) {
         }
     };
 
-    const gradientMotion = {
-        changeBg: {
-        }
-    };
 
     return (
         <Card
@@ -47,7 +43,7 @@ function SmallMovieCard({ imageUrl, rating, title }) {
                 </motion.h4>
                 <Gradient
                     initial={{
-                        background: "linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.1))",
+                        background: "linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.25))",
                         duration: 2
                     }}
                     whileHover={{
@@ -61,10 +57,10 @@ function SmallMovieCard({ imageUrl, rating, title }) {
 }
 
 const Card = styled(motion.div)`
-    min-height: 25rem;
-    min-width: 15rem;
-    max-width: 25rem;
-    max-height: 30rem;
+    min-height: 16rem;
+    min-width: 10rem;
+    max-width: 100%;
+    max-height: 100%;
 
     position: relative;
     cursor: pointer;
@@ -75,6 +71,7 @@ const Card = styled(motion.div)`
         width: 100%;
         height: 100%;
         position: absolute;
+        object-fit: scale-down;
         left: 0;
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;

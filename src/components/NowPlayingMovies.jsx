@@ -25,10 +25,14 @@ export default function NowPlayingMovies() {
 
                 options={{
                     perPage: 2,
-                    // arrows: false,
                     pagination: false,
-                    // drag: 'free',
-                    gap: "0.5rem"
+                    gap: "0.5rem",
+                    type: 'loop',
+                    breakpoints: {
+                        1000: {
+                            perPage: 1
+                        }
+                    }
                 }}
             >
                 {
@@ -47,7 +51,7 @@ export default function NowPlayingMovies() {
                     })
                 }
             </SSplide>
-        
+
         </Wrapper>
     );
 }

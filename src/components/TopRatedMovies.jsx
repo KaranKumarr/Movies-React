@@ -4,6 +4,7 @@ import '@splidejs/splide/dist/css/splide.min.css';
 import styled from 'styled-components';
 import { getTopRatedMovies } from '../data/moviesApiCall';
 import SmallMovieCard from './SmallMovieCard';
+import { getSpaceUntilMaxLength } from '@testing-library/user-event/dist/utils';
 
 function TopRatedMovies() {
 
@@ -24,9 +25,18 @@ function TopRatedMovies() {
 
             <SSplide
                 options={{
-                    perPage: 5,
                     gap: "1rem",
-                    pagination: false
+                    pagination: false,
+                    perPage: 5,
+                    type: 'loop',
+                    breakpoints: {
+                        1250: {
+                            perPage: 4
+                        },
+                        700: {
+                            perPage: 3
+                        }
+                    }
                 }}
             >
                 {topRatedMovies.map((movie) => {
@@ -50,12 +60,13 @@ function TopRatedMovies() {
 
 
 const Wrapper = styled.div`
-    padding: 1rem;
+  padding: 1rem;
     `;
 
 const SSplide = styled(Splide)`
     display: flex;
     width: 100%;
+
 `;
 
 
