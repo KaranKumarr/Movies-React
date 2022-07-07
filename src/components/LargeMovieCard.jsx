@@ -5,7 +5,7 @@ import { HiStar } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import { getGenreName } from '../data/moviesApiCall';
 
-function LargeMovieCard({ title, rating, imageUrl, genres, release }) {
+function LargeMovieCard({ title, rating, imageUrl, genres, release, movieId }) {
 
     const genreList = genres.map((g) => {
         return getGenreName(g);
@@ -43,7 +43,7 @@ function LargeMovieCard({ title, rating, imageUrl, genres, release }) {
             whileHover="hover"
             animate="rest"
         >
-            <Link to={'/movie/123'}>
+            <Link to={'/movie/' + movieId}>
                 <img src={`https://image.tmdb.org/t/p/original${imageUrl}`} alt={title} />
                 <h2>{title.toUpperCase()}</h2>
                 <h3>

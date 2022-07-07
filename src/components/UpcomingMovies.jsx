@@ -50,6 +50,7 @@ function UpcomingMovies() {
                                 title={movie.title}
                                 release={movie.release_date}
                                 imageUrl={movie.poster_path}
+                                movieId={movie.id}
                             />
                         </SplideSlide>
                     );

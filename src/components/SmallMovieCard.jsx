@@ -2,8 +2,9 @@ import React from 'react';
 import { HiStar } from 'react-icons/hi';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-function SmallMovieCard({ imageUrl, rating, title, release }) {
+function SmallMovieCard({ imageUrl, rating, title, release, movieId }) {
 
     let _resultDate;
 
@@ -42,7 +43,7 @@ function SmallMovieCard({ imageUrl, rating, title, release }) {
             whileHover="hover"
             animate="rest"
         >
-            <div>
+            <Link to={'/movie/'+movieId}>
                 <img src={`https://image.tmdb.org/t/p/original${imageUrl}`} alt={title} />
 
                 {
@@ -74,7 +75,7 @@ function SmallMovieCard({ imageUrl, rating, title, release }) {
                         duration: 2
                     }}
                 />
-            </div>
+            </Link>
         </Card>
     );
 }
@@ -94,7 +95,7 @@ const Card = styled(motion.div)`
         min-width: 5.5rem;
     }
     cursor: pointer;
-    div{
+    Link{
         width: 100%;
     }
     img{

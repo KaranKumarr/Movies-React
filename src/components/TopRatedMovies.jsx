@@ -52,6 +52,7 @@ function TopRatedMovies() {
                                 title={movie.title}
                                 rating={movie.vote_average}
                                 imageUrl={movie.poster_path}
+                                movieId={movie.id}
                             />
                         </SplideSlide>
                     );

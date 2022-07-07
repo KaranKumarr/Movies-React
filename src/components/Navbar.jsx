@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FiSearch } from 'react-icons/fi';
 import { useState } from 'react';
@@ -13,20 +14,26 @@ function Navbar() {
         <Nav>
             <div>
                 {/* Replace p tags with Link from react-router-dom */}
-                <SLink
-                    className={activeTab === 'movies' ? 'active' : ''}
-                    onClick={() => setActiveTab("movies")}
-                >
-                    <GiTheater />
-                    <span>Movies</span>
-                </SLink>
-                <SLink
-                    className={activeTab === 'tv shows' ? 'active' : ''}
-                    onClick={() => setActiveTab("tv shows")}
-                >
-                    <GiTv />
-                    <span>TV Shows</span>
-                </SLink>
+                <Link
+                    to={"/"}>
+                    <SLink
+                        className={activeTab === 'movies' ? 'active' : ''}
+                        onClick={() => setActiveTab("movies")}
+                    >
+                        <GiTheater />
+                        <span>Movies</span>
+                    </SLink>
+                </Link>
+                <Link
+                    to={'/tv'}>
+                    <SLink
+                        className={activeTab === 'tv shows' ? 'active' : ''}
+                        onClick={() => setActiveTab("tv shows")}
+                    >
+                        <GiTv />
+                        <span>TV Shows</span>
+                    </SLink>
+                </Link>
             </div>
             <form>
                 <FiSearch />

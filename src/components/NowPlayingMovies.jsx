@@ -51,6 +51,7 @@ export default function NowPlayingMovies() {
                                     imageUrl={movie.backdrop_path}
                                     genres={movie.genre_ids}
                                     release={movie.release_date}
+                                    movieId={movie.id}
                                 />
                             </SplideSlide>
                         );
