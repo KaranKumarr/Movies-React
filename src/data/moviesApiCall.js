@@ -17,3 +17,10 @@ export const getNowPlayingMovies = () => {
     return nowPlayingData.results;
 };
 
+
+export const getTopRatedMovies = () => {
+
+    return nowPlayingData.results;
+};
+
+

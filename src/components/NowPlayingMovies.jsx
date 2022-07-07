@@ -1,6 +1,6 @@
 import { SplideSlide, Splide } from '@splidejs/react-splide';
-import { useState, useEffect } from 'react';
 import '@splidejs/splide/dist/css/splide.min.css';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { getNowPlayingMovies } from '../data/moviesApiCall';
 import LargeMovieCard from './LargeMovieCard';
@@ -34,7 +34,7 @@ export default function NowPlayingMovies() {
                 {
                     nowPlayingMovies.map((movie) => {
                         return (
-                            <SplideSlide key={movie.title}>
+                            <SplideSlide key={movie.id}>
                                 <LargeMovieCard
                                     title={movie.title}
                                     rating={movie.vote_average}
