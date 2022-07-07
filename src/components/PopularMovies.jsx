@@ -9,7 +9,13 @@ function PopularMovies() {
     const [popularMovies, setPopularMovies] = useState([]);
 
     useEffect(() => {
-        setPopularMovies(getPopularMovies());
+        
+        const fetchMovies = async () => {
+            const movies = await getPopularMovies();
+            setPopularMovies(movies);
+        };
+
+        fetchMovies();
     }, []);
 
 

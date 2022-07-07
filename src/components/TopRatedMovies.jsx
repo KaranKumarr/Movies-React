@@ -4,15 +4,19 @@ import '@splidejs/splide/dist/css/splide.min.css';
 import styled from 'styled-components';
 import { getTopRatedMovies } from '../data/moviesApiCall';
 import SmallMovieCard from './SmallMovieCard';
-import { getSpaceUntilMaxLength } from '@testing-library/user-event/dist/utils';
+
 
 function TopRatedMovies() {
 
     const [topRatedMovies, setTopRatedMovies] = useState([]);
 
     useEffect(() => {
-        setTopRatedMovies(getTopRatedMovies());
-        console.log(topRatedMovies);
+        const fetchMovies = async () => {
+            const movies = await getTopRatedMovies();
+            setTopRatedMovies(movies);
+        };
+
+        fetchMovies();
     }, []);
 
 

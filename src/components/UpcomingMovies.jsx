@@ -9,7 +9,12 @@ function UpcomingMovies() {
     const [upcomingMovie, setUpcomingMovies] = useState([]);
 
     useEffect(() => {
-        setUpcomingMovies(getUpcomingMovies());
+        const fetchMovies = async () => {
+            const movies = await getUpcomingMovies();
+            setUpcomingMovies(movies);
+        };
+
+        fetchMovies();
     }, []);
 
 

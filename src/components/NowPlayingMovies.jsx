@@ -13,7 +13,13 @@ export default function NowPlayingMovies() {
 
 
     useEffect(() => {
-        setNowPlayingMovies(getNowPlayingMovies());
+
+        const fetchMovies = async () => {
+            const movies = await getNowPlayingMovies();
+            setNowPlayingMovies(movies);
+        };
+
+        fetchMovies();
     }, []);
 
 
