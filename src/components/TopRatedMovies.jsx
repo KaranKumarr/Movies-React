@@ -34,7 +34,7 @@ function TopRatedMovies() {
                             perPage: 4
                         },
                         700: {
-                            perPage: 3
+                            perPage: 3,
                         }
                     }
                 }}

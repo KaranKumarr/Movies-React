@@ -57,12 +57,19 @@ function SmallMovieCard({ imageUrl, rating, title }) {
 }
 
 const Card = styled(motion.div)`
-    min-height: 16rem;
+    min-height: 20rem;
     min-width: 10rem;
     max-width: 100%;
     max-height: 100%;
-
     position: relative;
+    @media (max-width:1000px) {
+        min-height: 14rem;
+        min-width: 7rem;
+    }
+    @media(max-width:750){
+        min-height: 11rem;
+        min-width: 5.5rem;
+    }
     cursor: pointer;
     div{
         width: 100%;
