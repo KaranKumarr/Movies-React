@@ -1,6 +1,8 @@
 
 const nowPlayingData = require('../data/dummy data/nowPlayingMovies.json');
+const movieDetails = require('../data/dummy data/singleMovieDetails.json');
 const genresData = require("./moviesGenres.json");
+
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -59,8 +61,10 @@ export const getUpcomingMovies = async () => {
 };
 
 export const getMovieDetails = async (movie_id) => {
-    const api = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}&language=en-US`);
-    const data = await api.json();
+    // const api = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}&language=en-US`);
+    // const data = await api.json();
 
-    console.log(data);
+    // return data;
+
+    return movieDetails;
 };
