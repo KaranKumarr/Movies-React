@@ -1,6 +1,7 @@
 
 const nowPlayingData = require('../data/dummy data/nowPlayingMovies.json');
 const movieDetails = require('../data/dummy data/singleMovieDetails.json');
+const searchMovies = require('../data/dummy data/searchMovies.json');
 const genresData = require("./moviesGenres.json");
 
 
@@ -67,4 +68,9 @@ export const getMovieDetails = async (movie_id) => {
     // return data;
 
     return movieDetails;
+};
+
+export const getSearchedMovies = async (movie) => {
+
+    return searchMovies.results;
 };

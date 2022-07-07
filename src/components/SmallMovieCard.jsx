@@ -137,7 +137,6 @@ const Gradient = styled(motion.div)`
     border-top-right-radius: 1rem;
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
-    
 `;
 
 export default SmallMovieCard;

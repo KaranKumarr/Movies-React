@@ -4,16 +4,25 @@ import styled from 'styled-components';
 import { FiSearch } from 'react-icons/fi';
 import { useState } from 'react';
 import { GiTheater, GiTv } from 'react-icons/gi';
+import { useNavigate } from 'react-router-dom';
 
 
 function Navbar() {
 
     const [activeTab, setActiveTab] = useState("movies");
+    const [searchTerm, setSearchTerm] = useState("");
+    const navigate = useNavigate();
+
+    // Provoke Search 
+    const searchSubmitHandler = (e) => {
+        e.preventDefault();
+        setSearchTerm("");
+        navigate('/search/movies/' + searchTerm);
+    };
 
     return (
         <Nav>
             <div>
-                {/* Replace p tags with Link from react-router-dom */}
                 <Link
                     to={"/"}>
                     <SLink
@@ -35,10 +44,12 @@ function Navbar() {
                     </SLink>
                 </Link>
             </div>
-            <form>
+            <form onSubmit={searchSubmitHandler}>
                 <FiSearch />
                 <input type="text"
                     placeholder={`Enter ${activeTab} here`}
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                 />
             </form>
         </Nav>
