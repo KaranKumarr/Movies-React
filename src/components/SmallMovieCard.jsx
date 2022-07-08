@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-function SmallMovieCard({ imageUrl, rating, title, release, movieId }) {
+function SmallMovieCard({ imageUrl, rating, title, release, movieId, tvShowId }) {
 
     let _resultDate;
 
@@ -43,7 +43,7 @@ function SmallMovieCard({ imageUrl, rating, title, release, movieId }) {
             whileHover="hover"
             animate="rest"
         >
-            <Link to={'/movie/'+movieId}>
+            <Link to={tvShowId ? '/tv/' + tvShowId : '/movie/' + movieId}>
                 <img src={`https://image.tmdb.org/t/p/original${imageUrl}`} alt={title} />
 
                 {

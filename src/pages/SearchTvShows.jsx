@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import SearchedMovieCard from '../components/SearchedMovieCard';
-import { getSearchedTvShows } from '../data/moviesApiCall';
+import { getSearchedTvShows } from '../data/tvShowsApiCall';
 import { Link } from 'react-router-dom';
 
 function SearchTvShows() {
@@ -24,16 +24,15 @@ function SearchTvShows() {
 
 
     return (
-        <GridWrapper
-        >
+        <GridWrapper>
 
-            {tvShows.map((movie) => {
+            {tvShows.map((tvShow) => {
                 return (
-                    <Link key={movie.id}
-                        to={'/movie/' + movie.id}
+                    <Link key={tvShow.id}
+                        to={'/tv/' + tvShow.id}
                     >
-                        <SearchedMovieCard title={movie.name} imageUrl={movie.poster_path}
-                            rating={movie.vote_average}
+                        <SearchedMovieCard title={tvShow.name} imageUrl={tvShow.poster_path}
+                            rating={tvShow.vote_average}
                         />
                     </Link>
                 );

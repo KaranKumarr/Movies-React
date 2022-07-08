@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { SplideSlide, Splide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import styled from 'styled-components';
-import { getTopRatedTvShows } from '../data/moviesApiCall';
+import { getTopRatedTvShows } from '../data/tvShowsApiCall';
 import SmallMovieCard from './SmallMovieCard';
 
 
