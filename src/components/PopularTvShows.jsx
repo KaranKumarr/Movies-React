@@ -17,7 +17,6 @@ function PopularTvShows() {
             setPopularTvShows(tvShows);
         };
         fetchTvShows();
-        console.log(popularTvShows);
     }, []);
 
 
