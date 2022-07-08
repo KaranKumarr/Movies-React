@@ -2,9 +2,7 @@
 // const searchTvShows = require('../data/dummy data/searchTvShows.json');
 // const tvShowDetails = require('../data/dummy data/singleTvShowDetails.json');
 
-
 const API_KEY = process.env.REACT_APP_API_KEY;
-
 
 export const getGenreName = (id, isTvShow) => {
 
@@ -54,7 +52,6 @@ export const getTopRatedTvShows = async () => {
     // return filteredData;
 };
 
-
 export const getNowOnTheAirShows = async () => {
 
     const api = await fetch(`https://api.themoviedb.org/3/tv/on_the_air?api_key=${API_KEY}&language=en-US&page=1`);
@@ -74,7 +71,6 @@ export const getNowOnTheAirShows = async () => {
     // return filteredData;
 };
 
-
 export const getSearchedTvShows = async (tvShow) => {
 
     const api = await fetch(`https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&language=en-US&query=${tvShow}&page=1&include_adult=false`);
@@ -86,12 +82,8 @@ export const getSearchedTvShows = async (tvShow) => {
 
     return filteredData;
 
-
-
-
     // return searchTvShows.results;
 };
-
 
 export const getTvShowDetails = async (tvShowId) => {
 
@@ -99,7 +91,6 @@ export const getTvShowDetails = async (tvShowId) => {
     const data = await api.json();
 
     return data;
-
 
     // return tvShowDetails;
 };
