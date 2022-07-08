@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getTvShowDetails } from '../data/tvShowsApiCall';
-
+import { motion } from 'framer-motion';
 
 function TvShowDetail() {
 
@@ -35,7 +35,11 @@ function TvShowDetail() {
 
 
     return (
-        <DetailedWrapper>
+        <DetailedWrapper
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}>
             <img
                 src={`https://image.tmdb.org/t/p/original${details.backdrop_path}`} alt={details.name}
             />
@@ -80,7 +84,7 @@ function TvShowDetail() {
     );
 }
 
-const DetailedWrapper = styled.div`
+const DetailedWrapper = styled(motion.div)`
   /* width: 100vw;
   max-width: 100vw;
   max-height: 90vh; */

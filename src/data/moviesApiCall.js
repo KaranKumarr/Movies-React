@@ -1,7 +1,7 @@
 
-const nowPlayingData = require('../data/dummy data/nowPlayingMovies.json');
-const movieDetails = require('../data/dummy data/singleMovieDetails.json');
-const searchMovies = require('../data/dummy data/searchMovies.json');
+// const nowPlayingData = require('../data/dummy data/nowPlayingMovies.json');
+// const movieDetails = require('../data/dummy data/singleMovieDetails.json');
+// const searchMovies = require('../data/dummy data/searchMovies.json');
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -73,9 +73,13 @@ export const getMovieDetails = async (movie_id) => {
 export const getSearchedMovies = async (movie) => {
 
     const api = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${movie}&page=1&include_adult=false`);
-    const data = await api.json()
+    const data = await api.json();
 
-    return data;
+    const filteredData = data.results.filter((movie) => {
+        return movie.poster_path != null;
+    });
+
+    return filteredData;
 
     // return searchMovies.results;
 };

@@ -1,6 +1,6 @@
-const tvShows = require('./dummy data/popularTvShows.json');
-const searchTvShows = require('../data/dummy data/searchTvShows.json');
-const tvShowDetails = require('../data/dummy data/singleTvShowDetails.json');
+// const tvShows = require('./dummy data/popularTvShows.json');
+// const searchTvShows = require('../data/dummy data/searchTvShows.json');
+// const tvShowDetails = require('../data/dummy data/singleTvShowDetails.json');
 
 
 const API_KEY = process.env.REACT_APP_API_KEY;

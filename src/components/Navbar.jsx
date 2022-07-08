@@ -16,7 +16,6 @@ function Navbar() {
     const params = useParams();
 
     useEffect(() => {
-        console.log(params);
     }, [params]);
 
     const navigate = useNavigate();

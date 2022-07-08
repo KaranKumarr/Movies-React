@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import SearchedMovieCard from '../components/SearchedMovieCard';
 import { getSearchedMovies } from '../data/moviesApiCall';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function SearchMovies() {
 
@@ -25,6 +26,10 @@ function SearchMovies() {
 
     return (
         <GridWrapper
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
         >
 
             {movies.map((movie) => {
@@ -44,7 +49,7 @@ function SearchMovies() {
 }
 
 
-const GridWrapper = styled.div`
+const GridWrapper = styled(motion.div)`
   padding: 2rem 1rem;
   display: grid;
   align-items: center;
