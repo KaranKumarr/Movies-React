@@ -30,6 +30,8 @@ export default function NowPlayingMovies() {
             <SSplide
 
                 options={{
+                    autoplay: true,
+                    arrows: false,
                     perPage: 2,
                     pagination: false,
                     gap: "0.5rem",
