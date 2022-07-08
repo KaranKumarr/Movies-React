@@ -1,23 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { FiSearch } from 'react-icons/fi';
 import { useState } from 'react';
 import { GiTheater, GiTv } from 'react-icons/gi';
-import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 function Navbar() {
 
     const [activeTab, setActiveTab] = useState("movies");
     const [searchTerm, setSearchTerm] = useState("");
+
+    const params = useParams();
+
+    useEffect(() => {
+        console.log(params);
+    }, [params]);
+
     const navigate = useNavigate();
+
+
 
     // Provoke Search 
     const searchSubmitHandler = (e) => {
         e.preventDefault();
         setSearchTerm("");
-        navigate('/search/movies/' + searchTerm);
+        if (activeTab === 'movies') {
+            navigate('/search/movies/' + searchTerm);
+        } else {
+            navigate('/search/tv/' + searchTerm);
+        }
     };
 
     return (

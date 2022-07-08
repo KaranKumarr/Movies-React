@@ -4,6 +4,7 @@ const movieDetails = require('../data/dummy data/singleMovieDetails.json');
 const searchMovies = require('../data/dummy data/searchMovies.json');
 const tvShows = require('./dummy data/popularTvShows.json');
 
+const searchTvShows = require('../data/dummy data/searchTvShows.json');
 
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -105,4 +106,11 @@ export const getNowOnTheAirShows = async () => {
     });
 
     return filteredData;
+};
+
+
+export const getSearchedTvShows = async (movie) => {
+
+
+    return searchTvShows.results;
 };
