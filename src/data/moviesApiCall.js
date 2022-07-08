@@ -2,15 +2,18 @@
 const nowPlayingData = require('../data/dummy data/nowPlayingMovies.json');
 const movieDetails = require('../data/dummy data/singleMovieDetails.json');
 const searchMovies = require('../data/dummy data/searchMovies.json');
-const genresData = require("./moviesGenres.json");
+const tvShows = require('./dummy data/popularTvShows.json');
+
 
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
+export const getGenreName = (id, isTvShow) => {
 
-export const getGenreName = (id) => {
-    const genres = genresData.genres;
-    let genre = genres.find(g => g.id === id);
+    const movieGenres = require("./moviesGenres.json");
+    const genres = movieGenres.genres;
+    const genre = genres.find(g => g.id === id);
+
     return genre.name;
 };
 
@@ -73,4 +76,33 @@ export const getMovieDetails = async (movie_id) => {
 export const getSearchedMovies = async (movie) => {
 
     return searchMovies.results;
+};
+
+export const getPopularTvShows = async () => {
+
+    const filteredData = tvShows.results.filter((data) => {
+        return data.backdrop_path != null;
+    });
+
+    return filteredData;
+};
+
+
+export const getTopRatedTvShows = async () => {
+
+    const filteredData = tvShows.results.filter((data) => {
+        return data.poster_path != null;
+    });
+
+    return filteredData;
+};
+
+
+export const getNowOnTheAirShows = async () => {
+
+    const filteredData = tvShows.results.filter((data) => {
+        return data.poster_path != null;
+    });
+
+    return filteredData;
 };
