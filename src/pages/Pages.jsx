@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Movies from './Movies';
 import TvShows from './TvShows';
@@ -17,6 +17,7 @@ function Pages() {
         <AnimatePresence exitBeforeEnter>
             <Routes location={location} key={location.pathname}>
                 <Route path='/' element={<Movies />} />
+                <Route path='/Movies-React' element={<Navigate to={'/'} />} />
                 <Route path='movie/:movieId' element={<MovieDetail />} />
                 <Route path='/tv' element={<TvShows />} />
                 <Route path='search/movies/:searchTerm' element={<SearchMovies />} />
