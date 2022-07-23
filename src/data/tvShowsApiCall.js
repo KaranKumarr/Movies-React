@@ -1,7 +1,3 @@
-// const tvShows = require('./dummy data/popularTvShows.json');
-// const searchTvShows = require('../data/dummy data/searchTvShows.json');
-// const tvShowDetails = require('../data/dummy data/singleTvShowDetails.json');
-
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const getGenreName = (id, isTvShow) => {
@@ -25,11 +21,6 @@ export const getPopularTvShows = async () => {
     return filteredData;
 
 
-    // const filteredData = tvShows.results.filter((data) => {
-    //     return data.backdrop_path != null;
-    // });
-
-    // return filteredData;
 };
 
 
@@ -44,12 +35,6 @@ export const getTopRatedTvShows = async () => {
     });
 
     return filteredData;
-
-    // const filteredData = tvShows.results.filter((data) => {
-    //     return data.poster_path != null;
-    // });
-
-    // return filteredData;
 };
 
 export const getNowOnTheAirShows = async () => {
@@ -63,12 +48,6 @@ export const getNowOnTheAirShows = async () => {
 
     return filteredData;
 
-
-    // const filteredData = tvShows.results.filter((data) => {
-    //     return data.poster_path != null;
-    // });
-
-    // return filteredData;
 };
 
 export const getSearchedTvShows = async (tvShow) => {
@@ -81,8 +60,6 @@ export const getSearchedTvShows = async (tvShow) => {
     });
 
     return filteredData;
-
-    // return searchTvShows.results;
 };
 
 export const getTvShowDetails = async (tvShowId) => {
@@ -91,6 +68,4 @@ export const getTvShowDetails = async (tvShowId) => {
     const data = await api.json();
 
     return data;
-
-    // return tvShowDetails;
 };

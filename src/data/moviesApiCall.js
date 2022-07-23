@@ -1,8 +1,4 @@
 
-// const nowPlayingData = require('../data/dummy data/nowPlayingMovies.json');
-// const movieDetails = require('../data/dummy data/singleMovieDetails.json');
-// const searchMovies = require('../data/dummy data/searchMovies.json');
-
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const getGenreName = (id, isTvShow) => {
@@ -20,8 +16,6 @@ export const getNowPlayingMovies = async () => {
     const data = await api.json();
 
     return data.results;
-
-    // return nowPlayingData.results;
 };
 
 export const getTopRatedMovies = async () => {
@@ -31,7 +25,6 @@ export const getTopRatedMovies = async () => {
 
     return data.results;
 
-    // return nowPlayingData.results;
 };
 
 export const getPopularMovies = async () => {
@@ -41,7 +34,6 @@ export const getPopularMovies = async () => {
 
     return data.results;
 
-    // return nowPlayingData.results;
 };
 
 export const getUpcomingMovies = async () => {
@@ -55,7 +47,6 @@ export const getUpcomingMovies = async () => {
 
     return filteredData;
 
-    // return nowPlayingData.results;
 };
 
 export const getMovieDetails = async (movie_id) => {
@@ -77,6 +68,4 @@ export const getSearchedMovies = async (movie) => {
     });
 
     return filteredData;
-
-    // return searchMovies.results;
 };
