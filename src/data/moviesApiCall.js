@@ -7,6 +7,7 @@ export const getGenreName = (id, isTvShow) => {
     const genres = movieGenres.genres;
     const genre = genres.find(g => g.id === id);
 
+    
     return genre.name;
 };
 
