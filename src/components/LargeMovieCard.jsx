@@ -46,7 +46,7 @@ function LargeMovieCard({ title, rating, imageUrl, genres, release, movieId, tvS
             <Link
                 to={tvShowId ? '/tv/' + tvShowId : '/movie/' + movieId}
             >
-                <img src={`https://image.tmdb.org/t/p/original${imageUrl}`} alt={title} />
+                <img src={`https://image.tmdb.org/t/p/original${imageUrl}`} loading="lazy" alt={title} />
                 <h2>{title.toUpperCase()}</h2>
                 <h3>
                     <HiStar />

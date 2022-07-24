@@ -32,7 +32,7 @@ function SearchedMovieCard({ title, imageUrl, rating }) {
             whileHover="hover"
             animate="rest"
         >
-            <img src={`https://image.tmdb.org/t/p/original${imageUrl}`} alt={title} />
+            <img src={`https://image.tmdb.org/t/p/original${imageUrl}`} loading="lazy" alt={title} />
             <h3>
                 {title}
             </h3>
